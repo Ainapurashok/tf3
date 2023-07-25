@@ -14,10 +14,11 @@ provider "aws" {
 
 # Setup webserver ec2 instance
  
-resource "aws_vpc" "my_vpc" {
-  cidr_block = "10.0.0.0/16"
+resource "aws_instance" "webserver2" {
+  ami           = "ami-072ec8f4ea4a6f2cf"
+  instance_type = "t2.micro"
+
   tags = {
-    Name = "My_VPC_1"
+    Name = "webservernew"
   }
-}
-   
+} 
